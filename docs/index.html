@@ -12,9 +12,10 @@
 		<div class="container">
 			<h2>Faça a sua aposta:</h2>
 			<input 
-				type="number"
+				type="text"
 				id="bet_value"
-				onkeypress="return validation()"
+        onkeypress="return cashValidation()"
+        onkeyup="replaceComma()"
 				placeholder="Valor aqui R$..."
 			/>
 			<h2>Qual número vai apostar?</h2>

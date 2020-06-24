@@ -1,5 +1,21 @@
+
+
 function validation() {
-	return event.charCode >= 46 && event.charCode <= 57
+	return event.charCode >= 48 && event.charCode <= 57;
+}
+
+function cashValidation() {
+  var v = document.querySelector("#bet_value");
+  var r = event.charCode >= 44 && event.charCode <= 57;
+  // you can only type one "."
+  if ((event.charCode === 44 || event.charCode === 46) && v.value.indexOf(".") !== -1) r = false;
+  // if there's nothing in the text box you can't type "."
+  if ((event.charCode === 44 || event.charCode === 46) && v.value.length === 0) r = false;
+  return r;
+}
+
+function replaceComma() {
+  v.value = v.value.replace(/,/g, ".");
 }
 
 function animalOf(n) {
@@ -15,9 +31,9 @@ function animalOf(n) {
 }
 
 function evaluatePrice() {
-	var v = document.querySelector("#bet_value").value;
+  var v = document.querySelector("#bet_value").value;
 	var n = document.querySelector("#bet_n").value;
-	var m =  578311;
+	var m = 578311;
 	var p = 0;
 	var res = document.querySelector("#res");
 	var animal_n = 0;
@@ -43,8 +59,6 @@ function evaluatePrice() {
 
 	animal_n = animalOf(n);
 	animal_m = animalOf(m);
-
-	console.log(`${animal_n}, ${animal_m}`);
 
 	img = document.createElement("img");
 	img.setAttribute("src", `images/bicho${animal_n}.png`);
