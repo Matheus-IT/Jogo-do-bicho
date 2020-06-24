@@ -15,6 +15,7 @@ function cashValidation() {
 }
 
 function replaceComma() {
+  var v = document.querySelector("#bet_value");
   v.value = v.value.replace(/,/g, ".");
 }
 
