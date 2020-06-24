@@ -71,3 +71,20 @@ button:active {
   margin-left: 33%;
   width: 100px;
 }
+
+@media (max-width: 599px) {
+  .main {
+    width: 90%;
+  }
+  #res {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+  }
+
+  #animal {
+    margin: 10px auto;
+    width: 110px;
+  }
+}
